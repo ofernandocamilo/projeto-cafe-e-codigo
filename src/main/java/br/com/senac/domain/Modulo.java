@@ -11,8 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "modulos")
 public class Modulo implements Serializable {
 	
 	private static final long serialVersionUID = 7697943553676477457L;
