@@ -1,0 +1,103 @@
+body {
+    background: #fcfcfc;
+}
+
+p {
+    text-transform: initial;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+#admin .sidebar #list .nav .nav-item .nav-link, #admin .sidebar #list .nav .sub .nav-link {
+    padding: 20px 30px;
+}
+
+#admin .sidebar #list .nav .nav-item .nav-link .fa, #admin .sidebar #list .nav .sub .nav-link .fa {
+    margin-right: 10px;
+}
+
+.div_btn_acoes button{
+    margin-right: 10px;
+}
+
+.div_btn_acoes a{
+    margin-right: 10px;
+}
+
+.mb-1-5em{
+    margin-bottom: 1.5em;
+}
+
+#admin .sidebar {
+    background: white;
+}
+
+#admin .sidebar .head .logo {
+    height: auto;
+    width: 100%;
+}
+
+#admin .sidebar .head .logo img {
+    height: 100%;
+    width: 85%;
+    display: block;
+    margin: auto;
+}
+
+#admin .sidebar #list .nav .sub .nav-link:last-of-type:before {
+    display: none;
+}
+
+#admin .sidebar #list .nav .sub .nav-link:first-of-type:before {
+    display: none;
+}
+
+#admin .sidebar #list .nav .sub .nav-link {
+    margin-left: 10px;
+}
+
+.form-control:focus {
+    border-color: #7b01e9;
+}
+
+.select_multiple{
+    font-size: 1.5em;
+    /* padding: 10px 10px 10px 10px; */
+}
+
+.select_multiple span{
+    font-size: 0.5em;
+    display: block;
+}
+
+#admin .sidebar .head .btn {
+    cursor: initial;
+}
+
+.social_media{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.social_media i{
+    color: #7b01e9;
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+.help-block{
+    font-size: 0.8em;
+}
+
+.option_materias p{
+	display: inline-block;
+    padding-left: 10px;
+    font-size: 0.7em;
+    margin-bottom: 0;
+}
+
+.help-block {
+    padding-top: 15px;
+}
