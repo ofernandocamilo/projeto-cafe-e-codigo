@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.senac.domain.Avaliacao;
+import br.com.senac.domain.MateriaAluno;
 import br.com.senac.repository.AvaliacaoRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -24,21 +25,21 @@ public class AvaliacaoService {
 		return repoAvaliacao.save(avaliacao);
 	}
 	
-	public Avaliacao buscaPorID(Integer id) throws ObjectNotFoundException{
-		Optional<Avaliacao> avaliacao = repoAvaliacao.findById(id);
-		return avaliacao.orElseThrow(() -> new ObjectNotFoundException("Avaliacao não encontrado. ID: " + id));
-	}
+//	public Avaliacao buscaPorID(MateriaAluno id) throws ObjectNotFoundException{
+//		Optional<Avaliacao> avaliacao = repoAvaliacao.findById(id);
+//		return avaliacao.orElseThrow(() -> new ObjectNotFoundException("Avaliacao não encontrado. ID: " + id));
+//	}
 	
-	public Avaliacao salvarAlteracao(Avaliacao avaliacaoAlterado) throws ObjectNotFoundException{
-		Avaliacao avaliacao = buscaPorID(avaliacaoAlterado.getId());
-		avaliacao.setId(avaliacaoAlterado.getId());
-		avaliacao.setNome(avaliacaoAlterado.getNome());
-		avaliacao.setMateria(avaliacaoAlterado.getMateria());
-		return salvar(avaliacao);
-	}
+//	public Avaliacao salvarAlteracao(Avaliacao avaliacaoAlterado) throws ObjectNotFoundException{
+//		Avaliacao avaliacao = buscaPorID(avaliacaoAlterado.getAlunomateria());
+//		avaliacao.setAlunomateria(avaliacaoAlterado.getAlunomateria());
+//		avaliacao.setConceito(avaliacaoAlterado.getConceito());
+////		avaliacao.setMateria(avaliacaoAlterado.getMateria());
+//		return salvar(avaliacao);
+//	}
 	
-	public void excluir (Integer id) {
-		repoAvaliacao.deleteById(id);
-	}
+//	public void excluir (MateriaAluno id) {
+//		repoAvaliacao.deleteById(id);
+//	}
 
 }

@@ -122,21 +122,24 @@
                                 <div class="table-responsive">
                                     <table class="table table table-striped table-bordered">
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Nome</th>
+                                            <!-- <th>ID</th>  -->
+                                            <th>Conceito</th>
                                             <th>Descrição</th>
+                                            <th>Aluno</th>
                                             <th>Matéria</th>
-                                            <th>Ações</th>
+                                            <!-- <th>Matéria</th> -->
+                                            <!--  <th>Ações</th> -->
                                         </tr>
                                         <tr th:each="avaliacao : ${avaliacoes}">
-                                            <td th:text="${avaliacao.id}"></td>
-                                            <td th:text="${avaliacao.nome}"></td>
+                                            <!-- <td th:text="${avaliacao.id}"></td>  -->
+                                            <td th:text="${avaliacao.conceito}"></td>
                                             <td th:text="${avaliacao.desc}"></td>
-                                            <td th:text="${avaliacao.materia.nome}"></td>
-                                            <td>
+                                            <td th:text="${avaliacao.alunomateria.aluno.nome}"></td>
+                                            <td th:text="${avaliacao.alunomateria.materia.nome}"></td>
+<!--                                             <td>
                                                 <a th:href="@{/avaliacao/alterar/{idAvaliacao}(idAvaliacao=${avaliacao.id})}"  class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                                 <a th:href="@{/avaliacao/excluir/{idAvaliacao}(idAvaliacao=${avaliacao.id})}" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     </table>
                             </div>

@@ -35,7 +35,6 @@ public class ModuloService {
 		modulo.setNivel(moduloAlterado.getNivel());
 		modulo.setDesc(moduloAlterado.getDesc());
 		modulo.setCurso(moduloAlterado.getCurso());
-		modulo.setMaterias(moduloAlterado.getMaterias());
 		return salvar(modulo);
 	}
 	

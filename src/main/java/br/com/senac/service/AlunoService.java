@@ -36,11 +36,20 @@ public Aluno salvarAlteracao(Aluno alunoAlterado) throws ObjectNotFoundException
 	aluno.setEmail(alunoAlterado.getEmail());
 	aluno.setEnd(alunoAlterado.getEnd());
 	aluno.setTelefone(alunoAlterado.getTelefone());
+	aluno.setTurma(alunoAlterado.getTurma());
 	return salvar(aluno);
 }
 
 public void excluir (Integer id) {
 	repoAluno.deleteById(id);
+}
+
+public List<Aluno> findAll(){
+	return repoAluno.findAll();
+}
+
+public Aluno findById(Integer alunoId){
+	return repoAluno.findById(alunoId).get();
 }
 
 }

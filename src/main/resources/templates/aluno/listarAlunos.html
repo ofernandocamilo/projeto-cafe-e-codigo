@@ -127,6 +127,7 @@
                                             <th>Email</th>
                                             <th>Endereço</th>
                                             <th>Telefone</th>
+                                            <th>Turma</th>
                                             <th>Ações</th>
                                         </tr>
                                         <tr th:each="aluno : ${alunos}">
@@ -135,6 +136,7 @@
                                             <td th:text="${aluno.email}"></td>
                                             <td th:text="${aluno.end}"></td>
                                             <td th:text="${aluno.telefone}"></td>
+                                            <td th:text="${aluno.turma.anoSemestre}"></td>
                                             <td>
                                                 <a th:href="@{/aluno/alterar/{idAluno}(idAluno=${aluno.id})}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                                 <a th:href="@{/aluno/excluir/{idAluno}(idAluno=${aluno.id})}" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>

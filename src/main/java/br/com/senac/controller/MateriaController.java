@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.senac.domain.Materia;
 import br.com.senac.service.MateriaService;
+import br.com.senac.service.ModuloService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
@@ -18,6 +19,9 @@ public class MateriaController {
 	
 	@Autowired
 	private MateriaService materiaService;
+	
+	@Autowired
+	private ModuloService moduloService;
 	
 	@GetMapping("/listar")
 	public ModelAndView listaTodasMaterias() {
@@ -30,6 +34,7 @@ public class MateriaController {
 	public ModelAndView cadastrarMateria() {
 		ModelAndView mv = new ModelAndView("materia/cadastrarMateria");
 		mv.addObject("materia", new Materia());
+		mv.addObject("modulos", moduloService.buscarTodosModulos());
 		return mv;
 	}
 	
@@ -43,6 +48,7 @@ public class MateriaController {
 	public ModelAndView alterarMateria(@PathVariable("id") Integer idMateria) throws ObjectNotFoundException{
 		ModelAndView mv = new ModelAndView("materia/atualizarMateria");
 		mv.addObject("materia", materiaService.buscaPorID(idMateria));
+		mv.addObject("modulos", moduloService.buscarTodosModulos());
 		return mv;
 	}
 	

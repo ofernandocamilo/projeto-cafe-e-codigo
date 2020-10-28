@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.senac.domain.Materia;
+import br.com.senac.domain.Materia;
 import br.com.senac.repository.MateriaRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -35,11 +36,20 @@ public class MateriaService {
 		materia.setNome(materiaAlterado.getNome());
 		materia.setDesc(materiaAlterado.getDesc());
 		materia.setProfessor(materiaAlterado.getProfessor());
+		materia.setModulo(materiaAlterado.getModulo());
 		return salvar(materia);
 	}
 	
 	public void excluir (Integer id) {
 		repoMateria.deleteById(id);
+	}
+	
+	public List<Materia> findAll(){
+		return repoMateria.findAll();
+	}
+
+	public Materia findById(Integer materiaId){
+		return repoMateria.findById(materiaId).get();
 	}
 
 }

@@ -126,15 +126,13 @@
                                             <th>Nível</th>
                                             <th>Descrição</th>
                                             <th>Curso</th>
-                                            <th>Matéria(s)</th>
                                             <th>Ações</th>
                                         </tr>
                                         <tr th:each="modulo : ${modulos}">
                                             <td th:text="${modulo.id}"></td>
                                             <td th:text="${modulo.nivel}"></td>
                                             <td th:text="${modulo.desc}"></td>
-                                            <td th:text="${modulo.curso.id}"></td>
-                                            <td><span th:each=" materia: ${modulo.materias}" th:text="${'' + materia.nome + ' | '}" ></span></td>
+                                            <td th:text="${modulo.curso.nome}"></td>
                                             <td>
                                                 <a th:href="@{/modulo/alterar/{idModulo}(idModulo=${modulo.id})}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                                 <a th:href="@{/modulo/excluir/{idModulo}(idModulo=${modulo.id})}" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>

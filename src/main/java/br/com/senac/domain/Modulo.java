@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -25,23 +26,10 @@ public class Modulo implements Serializable {
 	private String nivel;
 	private String desc;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "id_curso")
 	private Curso curso;
 	
-	@ManyToMany
-	@JoinTable(
-		name = "modulo_materia",
-		joinColumns = { @JoinColumn(name = "id")},
-		inverseJoinColumns = { @JoinColumn(name = "id_materia")})
-	private List<Materia> materias;
-	
-	public List<Materia> getMaterias() {
-		return materias;
-	}
-	public void setMaterias(List<Materia> materias) {
-		this.materias = materias;
-	}
 	public Integer getId() {
 		return id;
 	}

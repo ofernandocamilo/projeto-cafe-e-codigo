@@ -123,20 +123,26 @@
                                 </div>
 
                                 <div class="col-lg-5 mb-1-5em">
-                                    <input  type="text" id="control-demo-1" placeholder="Nome" class="form-control" th:field="*{nome}" autofocus="autofocus">
+                                    <input  type="text" id="control-demo-1" placeholder="Conceito" class="form-control" th:field="*{conceito}" autofocus="autofocus">
                                 </div>
 
                                 <div class="col-lg-6 mb-1-5em">
                                     <input  type="text" id="control-demo-1" placeholder="Descrição" class="form-control" th:field="*{desc}" autofocus="autofocus">
                                 </div>
 
-                                <div class="col-lg-12 mb-1-5em">
-                                    <select class="form-control" th:field="*{materia}" autofocus="autofocus">
-										<option value="" selected>Selecione a Matéria</option>
-										<option th:each="materia : ${materias}" th:value="${materia.id}" th:text="${materia.nome}"></option>
-                                    </select>
-                                    <span id="helpBlock2" class="help-block">Selecione a matéria relacionada à avaliação em questão.</span>
-                                </div>
+                                <div class="col-lg-6 mb-1-5em">
+										<select class="form-control" name="alunomateria.aluno.id" autofocus="autofocus">
+											<option value="" selected>Selecione o Aluno</option>
+											<option th:each="aluno : ${alunos}" th:value="${aluno.id}" th:text="${aluno.nome}"></option>
+										</select>
+								</div>
+								
+                                <div class="col-lg-6 mb-1-5em">
+										<select class="form-control" name="alunomateria.materia.id" autofocus="autofocus">
+											<option value="" selected>Selecione a Matéria</option>
+											<option th:each="materia : ${materias}" th:value="${materia.id}" th:text="${materia.nome}"></option>
+										</select>
+								</div>
                         </div>
 							<div class="div_btn_acoes">
 								<button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-check-circle"></i> Atualizar</button>

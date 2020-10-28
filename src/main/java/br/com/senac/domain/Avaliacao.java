@@ -2,6 +2,7 @@ package br.com.senac.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,37 +19,48 @@ public class Avaliacao implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private String nome;
+	
+	@EmbeddedId
+	private MateriaAluno alunomateria;
+	
+//	private Integer id;
+	private String conceito;
 	private String desc;
 	
+	public MateriaAluno getAlunomateria() {
+		return alunomateria;
+	}
+	public void setAlunomateria(MateriaAluno alunomateria) {
+		this.alunomateria = alunomateria;
+	}
 	public String getDesc() {
 		return desc;
 	}
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+
+	public String getConceito() {
+		return conceito;
+	}
+	public void setConceito(String conceito) {
+		this.conceito = conceito;
+	}
 	
-	@OneToOne
-	@JoinColumn(name = "id_materia")
-	private Materia materia;
+//	@OneToOne
+//	@JoinColumn(name = "id_materia")
+//	private Materia materia;
+//	public Integer getId() {
+//		return id;
+//	}
+//	public void setId(Integer id) {
+//		this.id = id;
+//	}
+//	public Materia getMateria() {
+//		return materia;
+//	}£
+//	public void setMateria(Materia materia) {
+//		this.materia = materia;
+//	}
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public Materia getMateria() {
-		return materia;
-	}
-	public void setMateria(Materia materia) {
-		this.materia = materia;
-	}
 }

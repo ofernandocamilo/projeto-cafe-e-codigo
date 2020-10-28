@@ -123,13 +123,20 @@
 										<input  type="email" id="control-demo-1" placeholder="Email" class="form-control" th:field="*{email}" autofocus="autofocus">
 									</div>
 
-									<div class="col-lg-7 mb-1-5em">
+									<div class="col-lg-5 mb-1-5em">
 										<input  type="text" id="control-demo-1" placeholder="Endereço" class="form-control" th:field="*{end}" autofocus="autofocus">
 									</div>
 	
-									<div class="col-lg-5 mb-1-5em">
+									<div class="col-lg-4 mb-1-5em">
 										<input  type="tel" id="control-demo-3" placeholder="Telefone" class="form-control" th:field="*{telefone}" autofocus="autofocus">
 									</div>
+									
+									<div class="col-lg-3 mb-1-5em">
+                                            <select class="form-control" th:field="*{turma}" autofocus="autofocus">
+												<option value="" selected>Selecione a Turma</option>
+												<option th:each="turma : ${turmas}" th:value="${turma.id}" th:text="${turma.anoSemestre}"></option>
+                                            </select>
+                                    </div>
 							</div>
 							<div class="div_btn_acoes">
 								<button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-check-circle"></i> Atualizar</button>

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.senac.domain.Aluno;
 import br.com.senac.service.AlunoService;
+import br.com.senac.service.TurmaService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
@@ -18,6 +19,9 @@ public class AlunoController {
 	
 	@Autowired
 	private AlunoService alunoService;
+	
+	@Autowired
+	private TurmaService turmaService;
 	
 	@GetMapping("/listar")
 	public ModelAndView listaTodosAlunos() {
@@ -30,6 +34,7 @@ public class AlunoController {
 	public ModelAndView cadastrarAluno() {
 		ModelAndView mv = new ModelAndView("aluno/cadastrarAluno");
 		mv.addObject("aluno", new Aluno());
+		mv.addObject("turmas", turmaService.buscarTodasTurmas());
 		return mv;
 	}
 	
@@ -43,6 +48,7 @@ public class AlunoController {
 	public ModelAndView alterarAluno(@PathVariable("id") Integer idAluno) throws ObjectNotFoundException{
 		ModelAndView mv = new ModelAndView("aluno/atualizarAluno");
 		mv.addObject("aluno", alunoService.buscaPorID(idAluno));
+		mv.addObject("turmas", turmaService.buscarTodasTurmas());
 		return mv;
 	}
 	

@@ -24,9 +24,6 @@ public class ModuloController {
 	@Autowired
 	private CursoService cursoService;
 	
-	@Autowired
-	private MateriaService materiaService; 
-	
 	@GetMapping("/listar")
 	public ModelAndView listaTodosModulos() {
 		ModelAndView mv = new ModelAndView("modulo/listarModulos");
@@ -38,7 +35,6 @@ public class ModuloController {
 	public ModelAndView cadastrarModulo() {
 		ModelAndView mv = new ModelAndView("modulo/cadastrarModulo");
 		mv.addObject("cursos", cursoService.buscarTodosCursos());
-		mv.addObject("materias", materiaService.buscarTodasMaterias());
 		mv.addObject("modulo", new Modulo());
 		return mv;
 	}
@@ -54,7 +50,6 @@ public class ModuloController {
 		ModelAndView mv = new ModelAndView("modulo/atualizarModulo");
 		mv.addObject("modulo", moduloService.buscaPorID(idModulo));
 		mv.addObject("cursos", cursoService.buscarTodosCursos());
-		mv.addObject("materias", materiaService.buscarTodasMaterias());
 		return mv;
 	}
 	
