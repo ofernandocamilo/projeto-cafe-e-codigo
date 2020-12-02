@@ -23,81 +23,12 @@
 </head>
 <body>
 <section id="admin">
-	<div class="sidebar">
-		<div class="head">
-		  <div class="logo">
-			<img th:src="@{/img/cafe_codigo_logo.png}" alt="Café & Código | Cursos Presenciais e Online">
-
-			<div class="social_media col-lg-12">
-				<i class="fab fa-facebook"></i>
-				<i class="fab fa-twitter"></i>
-				<i class="fab fa-linkedin-in"></i>
-			  </div>
-			  
-		  </div>
-		  <span class="btn btn-danger">Bem-vindo(a), <br >Administrador!</span>
-		</div>
-		<div id="list">
-			<ul class="nav flex-column">
-				<li class="nav-item"><a th:href="@{/dashboard}" class="nav-link" ><i class="fa fa-adjust"></i>Dashboard</a></li>
-				<li class="nav-item"><a href="#menu3" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-graduation-cap"></i>Cursos<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
-				<li class="sub collapse" id="menu3">
-					<a th:href="@{/curso/cadastrar}" class="nav-link" data-parent="#menu3"><i class="fa fa-angle-right"></i> Cadastrar</a>
-					<a th:href="@{/curso/listar}" class="nav-link" data-parent="#menu3"><i class="fa fa-angle-right"></i> Listar</a>
-				</li>
-		
-				<li class="nav-item"><a href="#menu4" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-users"></i>Turmas<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
-				<li class="sub collapse" id="menu4">
-					<a th:href="@{/turma/cadastrar}" class="nav-link" data-parent="#menu4"><i class="fa fa-angle-right"></i> Cadastrar</a>
-					<a th:href="@{/turma/listar}" class="nav-link" data-parent="#menu4"><i class="fa fa-angle-right"></i> Listar</a>
-				</li>
-		
-				<li class="nav-item"><a href="#menu5" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-tasks"></i>Módulos<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
-				<li class="sub collapse" id="menu5">
-					<a th:href="@{/modulo/cadastrar}" class="nav-link" data-parent="#menu5"><i class="fa fa-angle-right"></i> Cadastrar</a>
-					<a th:href="@{/modulo/listar}" class="nav-link" data-parent="#menu5"><i class="fa fa-angle-right"></i> Listar</a>
-				</li>
-		
-				<li class="nav-item"><a href="#menu6" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-user"></i>Alunos<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
-				<li class="sub collapse" id="menu6">
-					<a th:href="@{/aluno/cadastrar}" class="nav-link" data-parent="#menu6"><i class="fa fa-angle-right"></i> Cadastrar</a>
-					<a th:href="@{/aluno/listar}" class="nav-link" data-parent="#menu6"><i class="fa fa-angle-right"></i> Listar</a>
-				</li>
-		
-				<li class="nav-item"><a href="#menu7" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-book"></i>Matérias<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
-				<li class="sub collapse" id="menu7">
-					<a th:href="@{/materia/cadastrar}" class="nav-link" data-parent="#menu7"><i class="fa fa-angle-right"></i> Cadastrar</a>
-					<a th:href="@{/materia/listar}" class="nav-link" data-parent="#menu7"><i class="fa fa-angle-right"></i> Listar</a>
-				</li>
-		
-				<li class="nav-item"><a href="#menu8" class="nav-link collapsed active" data-toggle="collapse"><i class="fa fa-file-alt"></i>Avaliações<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
-				<li class="sub collapse" id="menu8">
-					<a th:href="@{/avaliacao/cadastrar}" class="nav-link" data-parent="#menu8"><i class="fa fa-angle-right"></i> Cadastrar</a>
-					<a th:href="@{/avaliacao/listar}" class="nav-link" data-parent="#menu8"><i class="fa fa-angle-right"></i> Listar</a>
-				</li>
-			  </ul>
-		</div>
-	  </div>
+   <th:block th:insert="/../fragments/sidebar.html :: sidebar" />
 
   <div class="content">
     <div class="head">
-		<div class="top">
-		  <div class="left">
-			<button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
-			<button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
-		  </div>
-  
-		  <div class="right">
-			<div class="dropdown">
-			  <button class="btn btn-info dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</button>
-			  <div class="dropdown-menu" aria-labelledby="userDropdown">
-			   <a class="dropdown-item" href="#">Meu perfil</a>
-			   <a class="dropdown-item" href="#">Configurações</a>
-			   <a class="dropdown-item" href="#">Sair</a>
-			 </div>
-			</div>
-		  </div>
-		</div>
+    
+		<th:block th:insert="/../fragments/nav.html :: navbar" />
   
 		<div class="bottom">
 		  <div class="left">
@@ -159,11 +90,7 @@
   </div>
 </section>
 
-<script th:src="@{/js/jquery.min.js}"></script>
-<script th:src="@{/js/tether.min.js}"></script>
-<script th:src="@{/js/bootstrap.min.js}"></script>
-<script th:src="@{/js/highcharts.js}"></script>
-<script th:src="@{/js/chart.js}"></script>
-<script th:src="@{/js/app.js}"></script>
+<th:block th:insert="~{/fragments/footer-scripts :: footer-scripts}"></th:block>
+
 </body>
 </html>

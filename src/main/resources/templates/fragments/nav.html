@@ -1,0 +1,19 @@
+    <nav th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml">
+      <div class="top">
+        <div class="left">
+          <button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
+          <button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
+        </div>
+
+        <div class="right">
+          <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</button>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+             <a class="dropdown-item" href="#">Meu perfil</a>
+             <a class="dropdown-item" href="#">Configurações</a>
+             <a class="dropdown-item" href="#">Sair</a>
+           </div>
+          </div>
+        </div>
+      </div>
+     </nav>
