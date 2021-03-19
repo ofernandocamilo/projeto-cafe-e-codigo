@@ -22,9 +22,9 @@ public class PrincipalController {
 		return mv;
 	}
 	
-	@GetMapping("/login")
-	public ModelAndView login(){
-		ModelAndView mv = new ModelAndView("login");
-		return mv;
-	}
+//	@GetMapping("/login")
+//	public ModelAndView login(){
+//		ModelAndView mv = new ModelAndView("login");
+//		return mv;
+//	}
 }

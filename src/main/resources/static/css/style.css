@@ -101,3 +101,49 @@ p {
 .help-block {
     padding-top: 15px;
 }
+
+.login-page{
+    margin-left: 0px !important;
+    background-color: #fff !important;
+}
+
+.login-page-section{
+    max-width: 750px;
+    display: block;
+    margin: auto;
+}
+
+.login-page-section .logo img{
+    display: block;
+    margin: auto;
+}
+
+.login-page-section .card{
+    margin-top: 35px;
+}
+
+.login-page-section form{
+    padding-top: 15px;
+}
+
+.login-page-section .form-group{
+    margin-bottom: 1.3rem;
+}
+
+.login-page-section .btn-acao{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.login-page-section .btn.btn-default{
+    margin-right: 20px;
+}
+
+.login-page-section .form-group .esquecerSenha{
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.login-page-section .form-group a:hover{
+    text-decoration: underline;
+}
