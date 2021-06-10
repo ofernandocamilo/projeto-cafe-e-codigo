@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.senac.domain.Aluno;
 import br.com.senac.domain.Avaliacao;
 import br.com.senac.service.AlunoService;
 import br.com.senac.service.AvaliacaoService;
@@ -55,31 +56,11 @@ public class AvaliacaoController {
 		return mv;
 	}
 	
-//	@PostMapping("/salvar")
-//	public ModelAndView salvarAvaliacao(Avaliacao avaliacao) {
-//		avaliacaoService.salvar(avaliacao);
-//		return listaTodasAvaliacoes();
-//	}
-	
-//	@GetMapping("/alterar/{id}")
-//	public ModelAndView alterarAvaliacao(@PathVariable("id") Integer idAvaliacao) throws ObjectNotFoundException{
-//		ModelAndView mv = new ModelAndView("avaliacao/atualizarAvaliacao");
-//		mv.addObject("avaliacao", avaliacaoService.buscaPorID(idAvaliacao));
-//		mv.addObject("alunos", alunoService.buscarTodosAlunos());
-//		mv.addObject("materias", materiaService.buscarTodasMaterias());
-//		return mv;
-//	}
-	
-//	@PostMapping("/alterar")
-//	public ModelAndView alterar(Avaliacao avaliacaoAlterado) throws ObjectNotFoundException{
-//		avaliacaoService.salvarAlteracao(avaliacaoAlterado);
-//		return listaTodasAvaliacoes();
-//	}
-	
-//	@GetMapping("/excluir/{id}")
-//	public ModelAndView excluirAvaliacao(@PathVariable("id") Integer id) {
-//		avaliacaoService.excluir(id);
-//		return listaTodasAvaliacoes();
-//	}
-	
+	@GetMapping("/email/{emailAluno}")
+	public ModelAndView enviarEmail(@PathVariable("emailAluno") String emailAluno) throws ObjectNotFoundException{
+		ModelAndView mv = new ModelAndView("email/email-enviado");
+		mv.addObject("aluno", alunoService.findByEmail(emailAluno));
+		avaliacaoService.sendResetPasswordEmail(alunoService.findByEmail(emailAluno));
+		return mv;
+	}
 }

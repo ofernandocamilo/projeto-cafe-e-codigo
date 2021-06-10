@@ -8,4 +8,6 @@ import br.com.senac.domain.Aluno;
 @Repository
 public interface AlunoRepository extends JpaRepository < Aluno, Integer> {
 
+	Aluno findByEmail(String emailAluno);
+
 }

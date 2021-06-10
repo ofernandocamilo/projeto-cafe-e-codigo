@@ -3,9 +3,13 @@ package br.com.senac.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senac.context.ForgotPasswordEmailContext;
+import br.com.senac.domain.Aluno;
 import br.com.senac.domain.Avaliacao;
 import br.com.senac.domain.MateriaAluno;
 import br.com.senac.repository.AvaliacaoRepository;
@@ -20,11 +24,25 @@ public class AvaliacaoService {
 	public List<Avaliacao> buscarTodasAvaliacoes(){
 		return repoAvaliacao.findAll();
 	}
+	
+	@Autowired
+	private EmailService emailService;
 		
 	public Avaliacao salvar(Avaliacao avaliacao) {
 		return repoAvaliacao.save(avaliacao);
 	}
 	
+	public void sendResetPasswordEmail(Aluno aluno) {		
+		ForgotPasswordEmailContext emailContext = new ForgotPasswordEmailContext();
+		emailContext.init(aluno);
+		
+		try {
+			emailService.sendMail(emailContext);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
+		
 //	public Avaliacao buscaPorID(MateriaAluno id) throws ObjectNotFoundException{
 //		Optional<Avaliacao> avaliacao = repoAvaliacao.findById(id);
 //		return avaliacao.orElseThrow(() -> new ObjectNotFoundException("Avaliacao não encontrado. ID: " + id));

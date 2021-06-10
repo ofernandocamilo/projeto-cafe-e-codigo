@@ -52,4 +52,8 @@ public Aluno findById(Integer alunoId){
 	return repoAluno.findById(alunoId).get();
 }
 
+public Aluno findByEmail(String emailAluno) {
+	return repoAluno.findByEmail(emailAluno);
+}
+
 }
